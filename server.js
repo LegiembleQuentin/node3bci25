@@ -21,10 +21,12 @@ app.use((req, res, next) => {
 const articleRoutes = require('./routes/article.routes');
 const presentationRoutes = require('./routes/presentation.routes');
 const invoiceRoutes = require('./routes/invoice.routes');
+const cryptoRoutes = require('./routes/crypto.routes');
 app.use('/api', articleRoutes);
 app.use('/api', presentationRoutes);
 app.use(bodyParser.json());
 app.use('/api', invoiceRoutes);
+app.use('/api', cryptoRoutes);
 
 app.listen(7007, () => {
     log.writeLog('server.log', 'Server started on http://localhost:5000');
