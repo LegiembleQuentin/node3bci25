@@ -12,6 +12,7 @@ const logger = require('./config/logger');
 const nodemailer = require('nodemailer');
 const helmet = require('helmet');
 
+
 //options de protection par defaut:
 //CLICKJACKING
 //FUITE DE DONNEE
@@ -90,11 +91,13 @@ const articleRoutes = require('./routes/article.routes');
 const presentationRoutes = require('./routes/presentation.routes');
 const invoiceRoutes = require('./routes/invoice.routes');
 const cryptoRoutes = require('./routes/crypto.routes');
+const languageRoutes = require('./routes/language.routes');
 app.use('/api', articleRoutes);
 app.use('/api', presentationRoutes);
 app.use(bodyParser.json());
 app.use('/api', invoiceRoutes);
 app.use('/api', cryptoRoutes);
+app.use('/api', languageRoutes);
 
 app.listen(7007, () => {
     log.writeLog('server.log', 'Server started on http://localhost:5000');
